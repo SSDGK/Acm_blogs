@@ -1,0 +1,49 @@
+site_name: "ACM 算法笔记"
+site_url: "https://your-blog-url.com"
+theme:
+  name: "material"
+  language: "zh"
+  palette:
+    primary: "indigo"
+    accent: "indigo"
+  font:
+    text: "Roboto"
+    code: "Fira Code"
+  features:
+    - search.highlight
+    - search.suggest
+
+
+nav:
+  - 首页: index.md
+  - 知识点:
+    - 测试: knowledge/test.md
+  #     - 队列: 01-data-structure/queue.md
+  #     - 树: 01-data-structure/tree.md
+  # - 算法:
+  #     - 动态规划: 02-algorithm/dp.md
+  #     - 图论: 02-algorithm/graph.md
+  #     - 贪心: 02-algorithm/greedy.md
+  # - 竞赛记录:
+  #     - Codeforces: 03-contest/codeforces.md
+  #     - AtCoder: 03-contest/atcoder.md
+
+plugins:
+  - search
+  - git-revision-date:
+      type: date       
+      locale: zh_CN    
+  - awesome-pages
+  - mermaid2
+
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - toc:
+      permalink: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid-experimental
+          format: !!python/name:pymdownx.superfences.fence_code_format
