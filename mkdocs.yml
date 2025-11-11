@@ -16,7 +16,7 @@ theme:
 
 nav:
   - 首页: index.md
-  - 知识点:
+  - 知识点: 
     - 测试: knowledge/test.md
   #     - 队列: 01-data-structure/queue.md
   #     - 树: 01-data-structure/tree.md
@@ -29,21 +29,13 @@ nav:
   #     - AtCoder: 03-contest/atcoder.md
 
 plugins:
-  - search
-  - git-revision-date:
-      type: date       
-      locale: zh_CN    
+  - search  
   - awesome-pages
-  - mermaid2
+  - git-revision-date-localized:
+      locale: zh_CN
+      type: timeago
 
 
 markdown_extensions:
   - admonition
   - codehilite
-  - toc:
-      permalink: true
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid-experimental
-          format: !!python/name:pymdownx.superfences.fence_code_format

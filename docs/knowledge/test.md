@@ -1,19 +1,2 @@
-# 动态规划
-
-_Last updated: {{ page.git_revision_date }}_  
-
-## 问题描述
-给定一个序列，求最大子段和。
-
-## 思路
-- 定义 dp[i] 为以 i 结尾的最大子段和
-- 状态转移：dp[i] = max(dp[i-1]+a[i], a[i])
-
-``` mermaid
-graph LR
-  A[Start] --> B{Error?};
-  B -->|Yes| C[Hmm...];
-  C --> D[Debug];
-  D --> B;
-  B ---->|No| E[Yay!];
-```
+# 知识点记录
+现在我有很多知识点空缺，笔记慢慢写，恰好我现在刚开始学左神的挺难课程。
