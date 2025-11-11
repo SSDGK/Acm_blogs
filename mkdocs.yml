@@ -18,15 +18,9 @@ nav:
   - 首页: index.md
   - 知识点: 
     - 测试: knowledge/test.md
-  #     - 队列: 01-data-structure/queue.md
-  #     - 树: 01-data-structure/tree.md
-  # - 算法:
-  #     - 动态规划: 02-algorithm/dp.md
-  #     - 图论: 02-algorithm/graph.md
-  #     - 贪心: 02-algorithm/greedy.md
-  # - 竞赛记录:
-  #     - Codeforces: 03-contest/codeforces.md
-  #     - AtCoder: 03-contest/atcoder.md
+  
+  - 游记:
+    - ICPC2025南京站: tour/ICPC2025-nanjing.md
 
 plugins:
   - search  
