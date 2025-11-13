@@ -1,7 +1,7 @@
 site_name: "ACM 算法笔记"
 site_url: "https://your-blog-url.com"
 theme:
-  name: "material"
+  name: material
   language: "zh"
   palette:
     primary: "indigo"
@@ -18,6 +18,8 @@ nav:
   - 首页: index.md
   - 知识点: 
     - 测试: knowledge/test.md
+    - 图论:
+      - 最短路树: knowledge/GraphTheory/ShortestPathTree.md
   
   - 游记:
     - ICPC2025南京站: tour/ICPC2025-nanjing.md
@@ -29,9 +31,30 @@ plugins:
       locale: zh_CN
       type: timeago
 
-
 markdown_extensions:
-  - admonition
+  # 基础增强功能
   - codehilite
+  - admonition
+  - footnotes
   - attr_list
+  - def_list
   - md_in_html
+  - toc:
+      permalink: true
+
+  # pymdown 扩展（MkDocs Material 推荐）
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.tilde        # 支持 ~~删除线~~
+  - pymdownx.arithmatex:  # 支持 $公式$
+      generic: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+
+extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
