@@ -642,8 +642,8 @@
 <p>如下左图，我们求以1为源点的单源最短路，得到右图所示的最短路树。</p>
 <table>
     <tr>
-    <td><img src="https://i.ibb.co/xq1mzSV6/2025-11-13-185226.png" alt="原图" width="300"></td>
-    <td><img src="https://i.ibb.co/5hT3fZYL/2025-11-13-190331.png" alt="最短路树" width="300"></td>
+    <td><img src="http://img.wuyi.host/knowledge/GraphTheory/2025-11-13-185226.png" alt="原图" width="300"></td>
+    <td><img src="http://img.wuyi.host/knowledge/GraphTheory/2025-11-13-190331.png" alt="最短路树" width="300"></td>
     </tr>
 </table>
 
@@ -714,7 +714,7 @@
 <p>首先我们可以分析发现，删去的边一定是原来的最短路上的边，否则最短路长度不变，一定不优。
 于是一个想法是尝试枚举每一条删的边，跑最短路。但这样时间复杂度炸了，无法通过。于是我们转换一下角度，我们来枚举每一条不在原最短路上的边。</p>
 <div align="center">
-  <img src="https://i.ibb.co/VprQf09k/2025-11-13-232947.png" width="500">
+  <img src="http://img.wuyi.host/knowledge/GraphTheory/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-11-13%20232947.png" width="500">
 </div>
 
 <p>如图，我们假设n到1的最短路是中间那条，那么我们现在想要求出删去x后的最短路，其必然经过绿色所在的路径或者红色边所在的路径，我们可以使用这两个边去更新x的信息，我们发现x的答案实际上就是经过红绿两条的n到1的路径的长度中较小的那一个。</p>
@@ -936,7 +936,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年11月14日 02:04:56 UTC"><span class="timeago" datetime="2025-11-14T02:04:56+00:00" locale="zh_CN"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年11月14日 02:04:56 UTC">2025-11-14</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025年11月14日 02:34:00 UTC"><span class="timeago" datetime="2025-11-14T02:34:00+00:00" locale="zh_CN"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年11月14日 02:34:00 UTC">2025-11-14</span>
   </span>
 
     
