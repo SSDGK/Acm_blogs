@@ -255,4 +255,48 @@ void update(int jobl, int jobr, int jobv, int l, int r, int i) {
 
 在这里首先感谢一下[MaxBlazeRes_Fire](https://codeforces.com/profile/MaxBlazeRes_Fire)的倾囊相授，在写这几道题时我踩了非常多坑，多亏了茵神帮助才能顺利通过。
 
-~~明天接着写~~
+题目描述：给出一个带权无向连通图。有多次询问，每次询问给出一个序号和新权值，求将序号对应的边的边权修改为新权值后1到n的最短路长度，询问之间互相独立。
+
+首先记原图最短路长度为$d$我们可以分析，他询问的边是否在原图1到n的最短路路径上以及边权的变化情况：
+- 不在最短路上，且边权变小：答案就是1到u的距离加新边权再加v到n的距离，再和&d&取一个最小值
+- 不在最短路上，且边权变大：那么答案就是$d$
+- 在最短路上，且边权变小：答案就是$d$减去原边权和新边权的差值
+- 在最短路上，且边权最大：那么我们考虑走不走这条边，答案为不走这条边时的最短路长度和$d$减去原边权和新边权的差值的最小值
+
+我们发现1，2情况之间和3，4情况之间可以合并在一起，而在上一题中我们已经知道了怎么获取不走一条边的最短路长度，问题就解决了……吗？
+
+确实思路没啥问题了，但这道题数据量很大，加上还要回答同等数量级的询问，但时限只有2s。所以首先这道题需要一点卡常，注意多使用数组，快读。还有一个很重要的，上述所说的3和4情况中，线段树上询问是$O(logn)$的，在这题里首先预处理就非常耗时，基本上询问要做到$O(1)$才能通过。我们注意到，询问之间独立，也就是预处理完后我们并不需要再修改线段树了，并且单次询问的还是单点，所以我们只需要预先遍历一下整棵线段树，将懒标记全部下发，然后把叶节点的信息单独拿出来用于查询就好啦。
+```cpp
+O(1)查询处理
+void query(int l, int r, int i) {
+    if(l == r) {
+        final_ans[l] = maxn[i];
+    } else {
+        int mid = (l + r) / 2;
+        down(i);
+        query(l, mid, i << 1);
+        query(mid + 1, r, i << 1 | 1);
+    }
+}
+ll query(int jobl) {
+    return final_ans[jobl];
+}
+```
+```cpp
+查询
+st.query(1, p - 1, 1);
+while(Q--) {
+    int t, x;
+    t = read(), x = read();
+    t--;
+    if(ls.count({tls[t]})) {
+        auto [u, v, w] = tls[t];
+        ll ans = min(T1.dis[u] + x + Tn.dis[v], T1.dis[v] + x + Tn.dis[u]);
+        printf("%lld\n", min(ans, T1.dis[n]));
+    } else {
+        auto [u, v, w] = tls[t];
+        ll tans = st.query(min(rk[u], rk[v]));
+        printf("%lld\n", min(tans, T1.dis[n] - w + x));
+    }
+}
+```
