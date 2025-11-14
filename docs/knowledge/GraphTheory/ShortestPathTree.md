@@ -5,8 +5,8 @@
 如下左图，我们求以1为源点的单源最短路，得到右图所示的最短路树。
 <table>
     <tr>
-    <td><img src="https://i.ibb.co/xq1mzSV6/2025-11-13-185226.png" alt="原图" width="300"></td>
-    <td><img src="https://i.ibb.co/5hT3fZYL/2025-11-13-190331.png" alt="最短路树" width="300"></td>
+    <td><img src="http://img.wuyi.host/knowledge/GraphTheory/2025-11-13-185226.png" alt="原图" width="300"></td>
+    <td><img src="http://img.wuyi.host/knowledge/GraphTheory/2025-11-13-190331.png" alt="最短路树" width="300"></td>
     </tr>
 </table>
 
@@ -90,7 +90,7 @@ void solve() {
 于是一个想法是尝试枚举每一条删的边，跑最短路。但这样时间复杂度炸了，无法通过。于是我们转换一下角度，我们来枚举每一条不在原最短路上的边。
 
 <div align="center">
-  <img src="https://i.ibb.co/VprQf09k/2025-11-13-232947.png" width="500">
+  <img src="http://img.wuyi.host/knowledge/GraphTheory/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202025-11-13%20232947.png" width="500">
 </div>
 
 如图，我们假设n到1的最短路是中间那条，那么我们现在想要求出删去x后的最短路，其必然经过绿色所在的路径或者红色边所在的路径，我们可以使用这两个边去更新x的信息，我们发现x的答案实际上就是经过红绿两条的n到1的路径的长度中较小的那一个。
