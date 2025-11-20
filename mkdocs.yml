@@ -20,6 +20,8 @@ nav:
     - 测试: knowledge/test.md
     - 图论:
       - 最短路树: knowledge/GraphTheory/ShortestPathTree.md
+    - 组合数学:
+      - 卡特兰数: knowledge/combinatorics/Catalan.md
   
   - 游记:
     - ICPC2025南京站: tour/ICPC2025-nanjing.md
